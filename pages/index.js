@@ -7,9 +7,13 @@ function Home(props) {
             <div>
                 <p>Olá, mundo!</p>
             </div>
-            <div>{dataDinamicaStr} (dinâmico)</div>
+            <div>
+                <strong>{dataDinamicaStr}</strong> (renderizado dinâmicamente a cada request)
+            </div>
             <br />
-            <div>{props.dataEstaticaStr} (estático)</div>
+            <div>
+                <strong>{props.dataEstaticaStr}</strong> (renderizado no build e ficando estático por <strong> 5 segundos</strong>, até ser revalidado/atualizado),
+            </div>
         </div>
     )
 }
