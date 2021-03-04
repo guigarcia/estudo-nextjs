@@ -1,13 +1,30 @@
+function Home(props) {
+    const dataDinamica = new Date();
+    const dataDinamicaStr = dataDinamica.toGMTString();
 
-
-function Home() {
     return (
         <div>
-            <h1>Olá, mundo!</h1>
-            <p>Testando as funções</p>
+            <div>
+                <p>Olá, mundo!</p>
+            </div>
+            <div>{dataDinamicaStr} (dinâmico)</div>
+            <br />
+            <div>{props.dataEstaticaStr} (estático)</div>
         </div>
-        )
+    )
 }
 
+export async function getStaticProps() {
+    const dataEstatica = new Date();
+    const dataEstaticaStr = dataEstatica.toGMTString();
 
-export default Home
+    return {
+        props: {
+            dataEstaticaStr
+        },
+        revalidate: 5
+        //Será atualizada/revalidada a cada 1 segundo
+    }
+}
+
+export default Home;
