@@ -1,4 +1,4 @@
-import Datas from "../components/Datas";
+import Datas from "./Datas";
 
 function Home() {
     return (
@@ -9,5 +9,6 @@ function Home() {
         </div>
         )
 }
+
 
 export default Home
