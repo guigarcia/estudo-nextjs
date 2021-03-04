@@ -1,5 +1,3 @@
-import {useState} from 'react'
-
 function Datas(props) {
     const dataDinamica = new Date();
     const dataDinamicaStr = dataDinamica.toGMTString();
@@ -23,7 +21,7 @@ export async function getStaticProps() {
             dataEstaticaStr
         },
         revalidate: 5
-        //Será atualizada/revalidada a cada 5 segundo
+        //Será atualizada/revalidada a cada 1 segundo
     }
 }
 
